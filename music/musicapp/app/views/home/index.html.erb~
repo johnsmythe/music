@@ -1,0 +1,36 @@
+<h1>Youtube Playlist Generator</h1>
+
+<%= form_tag root_path, :method => 'get' do %>
+        <p>
+                <%= text_field_tag :add,nil, :placeholder=>'Youtube Link Here' %>
+                <%= submit_tag "add", :name => nil %>
+				
+        </p>
+<% end %>
+
+<div class="box">
+        <label> Playlist:</label> <br />
+        <div class="link_box">
+                <% if session[:link_list] == [] %>
+                        there are no links!
+                <% else %>
+                        <%session[:link_list].each_with_index do |element, index|  %>
+					<%= form_tag root_path, :method => 'get' do %>
+                                		<div class = "links" >
+								<div class= "pl_icon">
+								<%= image_tag ("rss.jpg") %>
+								</div>
+								<div class ="link_to_song">
+								<%= element %>
+								</div>
+								<div class= "delete_icon">
+								<%= image_submit_tag("delete.png" , {:name => "submit", :value =>index})  %>
+								</div>							
+						</div> <br />
+					<% end %>
+                        	<% end %>
+                        </ul>
+                <% end %>       
+        </div>
+</div>
+
