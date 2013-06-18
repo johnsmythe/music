@@ -1,7 +1,6 @@
 class HomeController < ApplicationController
   def index
 	session[:link_list] ||= []
-	@position = 0
 
         if params[:add] 
 		if  params[:add] != ""

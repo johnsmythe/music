@@ -2,8 +2,8 @@
 
 <%= form_tag root_path, :method => 'get' do %>
         <p>
-                <%= text_field_tag :add,nil, :placeholder=>'Youtube Link Here' %>
-                <%= submit_tag "add", :name => nil %>
+                <%= text_field_tag :add,nil, :placeholder=>'Youtube Link Here', :class => "search_bar" %>
+                <%= submit_tag "add", :name => nil, :class => "search_submit" %>
 				
         </p>
 <% end %>
